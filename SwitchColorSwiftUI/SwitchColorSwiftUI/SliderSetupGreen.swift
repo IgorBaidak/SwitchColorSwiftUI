@@ -17,7 +17,7 @@ struct SliderSetupGreen: View {
     var body: some View {
         
         HStack {
-            Text("0")
+            Text("\(lround(valueSliderGreen))")
                 .foregroundColor(.white)
             
             Slider(value: $valueSliderGreen, in: 0...100, step: 1)

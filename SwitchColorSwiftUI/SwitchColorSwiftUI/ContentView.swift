@@ -22,38 +22,22 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             Color.black
+                .ignoresSafeArea()
             VStack {
-                RoundedRectangle(cornerRadius: 15)
-                    .foregroundColor(.red)
-                    .frame(height: 100)
-                    
-                RoundedRectangle(cornerRadius: 15)
-                    .foregroundColor(.blue)
-                    .frame(height: 100)
+                RectangleColor(colorR: valueSliderRed, colorG: valueSliderGreen, colorB: valueSliderBlue)
+                RectangleColor(colorR: valueSliderRed, colorG: valueSliderGreen, colorB: valueSliderBlue)
+                
                 SliderSetupRed(valueSliderRed: $valueSliderRed, colorSliderRed: .red, valueTFRed: $valueTFRed)
                 SliderSetupBlue(valueSliderBlue: $valueSliderBlue, colorSliderBlue: .blue, valueTFBlue: $valueTFBlue)
                 SliderSetupGreen(valueSliderGreen: $valueSliderGreen, colorSliderGreen: .green, valueTFGreen: $valueTFGreen)
-                Spacer()
                 Button("Save") {
-                        
+                    
                 }
+                Spacer()
+                
             }
             
             .padding()
-                    
-            
-//            HStack {
-//                Text("Value")
-//                    .foregroundColor(.white)
-//                
-//                Slider(value: $valueSliderOne)
-//                    .frame(width: 250)
-//                    .colorMultiply(.red)
-//            
-//                TextField("Value", text: $valueTFOne)
-//                    .background(.white)
-//                    .foregroundColor(.black)
-//            } .padding(.horizontal)
         }
             
     }
